@@ -1,0 +1,68 @@
+{
+  "name": "League-Of-Legends-Pregame-UI",
+  "version": "1.1.0",
+  "description": "League Of Legends Pregame-UI",
+  "main": "dist/main.js",
+  "scripts": {
+    "package-win": "electron-packager . --overwrite --out=release_builds --ignore=\"(overlay-react|fonts|src|logs|\\.github|\\.vscode)\"",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint -c .eslintrc --ext .ts ./src",
+    "start": "npm run build && electron-forge start",
+    "package": "electron-forge package",
+    "make": "npm run build && electron-forge make"
+  },
+  "author": "Litzuck",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "electron": "^21.2.0",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@types/node": "^15.6.0",
+    "@types/request": "^2.48.7",
+    "@types/requestretry": "^1.12.8",
+    "@types/ws": "^7.4.2",
+    "cacheable-request": "^10.2.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.17.1",
+    "express-serve-asar": "^1.0.2",
+    "fastq": "^1.13.0",
+    "json8-merge-patch": "^1.0.4",
+    "lol-esports-spectate": "Si-Lan/lol-esports-spectate",
+    "request-promise": "^4.2.6",
+    "requestretry": "^7.1.0",
+    "ws": "^7.5.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/socktow/League-Of-Legends-Pregame-UI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/socktow/League-Of-Legends-Pregame-UI/issues"
+  },
+  "homepage": "https://github.com/socktow/League-Of-Legends-Pregame-UI#readme",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": true,
+        "ignore": "(overlay-react|fonts|logs|\\.github|\\.vscode)"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "win32",
+            "linux",
+            "darwin"
+          ]
+        }
+      ]
+    }
+  }
+}

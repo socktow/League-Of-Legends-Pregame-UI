@@ -1,0 +1,58 @@
+.containerSub{
+	display: block;
+}
+
+.color-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.status{
+  --online-color: greenyellow;
+  --offline-color: red;
+  --starting-color: yellow;
+  height: 200px;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  line-height: 200px;
+  margin: 5px;
+  border-radius: 5px;
+}
+#statusClient {
+  background-color: var(--starting-color);
+}
+
+#statusWebServer {
+  background-color: var(--starting-color);
+}
+
+#statusWebSocketServer{
+  background-color: var(--starting-color);
+}
+
+
+
+.col{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.container-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.container-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
